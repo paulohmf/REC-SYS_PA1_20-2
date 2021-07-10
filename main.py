@@ -92,7 +92,7 @@ targets_df['UserId'] = targets_df['UserId:ItemId'].transform(lambda x: int(x.spl
 targets_df['ItemId'] = targets_df['UserId:ItemId'].transform(lambda x: int(x.split(":")[1][1:]))
 targets_df = targets_df[['UserId','ItemId']]
 
-# Recommendation
+# Recommendation (IMPROVE, make all recommendations at once with matriz operation)
 np.seterr(divide='ignore', invalid='ignore')
 f = open("results.csv", "w")
 f.write("UserId:ItemId,Prediction\n")
